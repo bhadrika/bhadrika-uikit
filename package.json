@@ -1,6 +1,6 @@
 {
-  "name": "@bhadrika-libs/uikit",
-  "version": "0.11.1",
+  "name": "bhadrika-uikit",
+  "version": "0.0.1",
   "description": "Set of UI components for pancake projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
