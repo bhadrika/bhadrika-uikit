@@ -32,14 +32,14 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
+const Logo: React.FC<Props> = ({ isPushed, togglePush, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
       <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
         <LogoIcon />
-        <Text bold style={{ marginLeft: 8 }}>
+        <Text color="primary" bold style={{ marginLeft: 8 }}>
           Buddhaswap
         </Text>
       </div>
