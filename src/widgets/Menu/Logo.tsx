@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { LogoIcon } from "../../components/Svg";
 import Flex from "../../components/Box/Flex";
-import { HamburgerIcon, HamburgerCloseIcon, LogoIcon as LogoWithText } from "./icons";
+import Text from "../../components/Text/Text";
+import { HamburgerIcon, HamburgerCloseIcon } from "./icons";
 import MenuButton from "./MenuButton";
 
 interface Props {
@@ -36,7 +37,12 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
-      <LogoWithText className="desktop-icon" isDark={isDark} />
+      <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+        <LogoIcon />
+        <Text bold style={{ marginLeft: 8 }}>
+          Buddhaswap
+        </Text>
+      </div>
     </>
   );
 
