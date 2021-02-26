@@ -10,6 +10,7 @@ import { Login } from "./types";
 interface Props {
   login: Login;
   onDismiss?: () => void;
+  onWalletCardClick?: () => void;
 }
 
 const HelpLink = styled(Link)`
@@ -19,7 +20,7 @@ const HelpLink = styled(Link)`
   margin-top: 24px;
 `;
 
-const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
+const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, onWalletCardClick }) => (
   <Modal title="Connect to a wallet" onDismiss={onDismiss}>
     {config.map((entry, index) => (
       <WalletCard
@@ -27,6 +28,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
         login={login}
         walletConfig={entry}
         onDismiss={onDismiss}
+        onWalletCardClick={onWalletCardClick}
         mb={index < config.length - 1 ? "8px" : "0"}
       />
     ))}
