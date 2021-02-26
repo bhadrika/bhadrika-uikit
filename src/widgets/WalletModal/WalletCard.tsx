@@ -9,15 +9,17 @@ interface Props {
   login: Login;
   onDismiss: () => void;
   mb: string;
+  onSelectWalletCard?: () => void;
 }
 
-const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => {
+const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb, onSelectWalletCard }) => {
   const { title, icon: Icon } = walletConfig;
   return (
     <Button
       fullWidth
       variant="tertiary"
       onClick={() => {
+        onSelectWalletCard?.();
         login(walletConfig.connectorId);
         window.localStorage.setItem(localStorageKey, "1");
         onDismiss();
