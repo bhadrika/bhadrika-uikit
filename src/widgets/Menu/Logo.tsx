@@ -27,7 +27,8 @@ const StyledLink = styled(Link)`
     width: 156px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
-      display: block;
+      display: flex;
+      align-items: center;
     }
   }
 `;
@@ -37,7 +38,7 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, href }) => {
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
-      <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+      <div className="desktop-icon">
         <LogoIcon />
         <Text color="primary" bold style={{ marginLeft: 8 }}>
           Buddhaswap
